@@ -22,13 +22,16 @@ namespace UserLoginAPI.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public UserController(
             UserManager<IdentityUser> userManager,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _roleManager = roleManager;
         }
 
         /**
@@ -84,6 +87,15 @@ namespace UserLoginAPI.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+
+            // Create Role named as Member
+            String memberRole = "Member";
+            if (!await _roleManager.RoleExistsAsync(memberRole))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(memberRole));
+            }
+            // Assign to User
+            await _userManager.AddToRoleAsync(user, memberRole);
 
             return Ok(new APIResponse { Status = "Success", Message = "User created successfully!" });
         }

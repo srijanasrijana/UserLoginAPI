@@ -9,99 +9,6 @@
 			"name": "api/User",
 			"item": [
 				{
-					"name": "/api/User/login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"ram\",\n    \"password\": \"Ram@123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/api/User/login",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"User",
-								"login"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "/api/User/login",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"username\": \"ram\",\n    \"password\": \"Ram@123\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/api/User/login",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"User",
-										"login"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 18 May 2022 18:58:47 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoicmFtIiwianRpIjoiZmU0NzU5MzctYjIyNC00NTBiLTk3MTctMDJlZTc2NDFmY2YwIiwiZXhwIjoxNjUyOTExMTI3LCJpc3MiOiJMb2dpbkFQSSBTZXJ2ZXIiLCJhdWQiOiJMb2dpbiBBUEkgQ2xpZW50In0.PdZ37XvPCvyVqOSkutwLXSNmhL8vDU9UxXqFx4FCfsQ\"\n}"
-						}
-					]
-				},
-				{
 					"name": "/api/User/register",
 					"request": {
 						"method": "POST",
@@ -113,7 +20,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"test@test.com\",\n  \"password\": \"Test@123\",\n  \"username\": \"Test\"\n}",
+							"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"User@123\",\n  \"username\": \"User\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,30 +100,101 @@
 							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"User created successfully!\"\n}"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "/WeatherForecast",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "text/plain"
-					}
-				],
-				"url": {
-					"raw": "{{baseUrl}}/WeatherForecast",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"WeatherForecast"
+				},
+				{
+					"name": "/api/User/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"User\",\n    \"password\": \"User@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/User/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/api/User/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Test\",\n    \"password\": \"Test@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/User/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"User",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 May 2022 19:41:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdCIsImp0aSI6ImFlYzYyMDY5LTkwZjQtNDY4MC1iZTRmLWNjODQxYjEzMDVkOCIsImV4cCI6MTY1MjkxMzY4NCwiaXNzIjoiTG9naW5BUEkgU2VydmVyIiwiYXVkIjoiTG9naW4gQVBJIENsaWVudCJ9.ALP3lz_w_KTxBersFFPtEIbvhoDWIlGvtEDmkBLkpHY\"\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		}
 	],
 	"event": [
